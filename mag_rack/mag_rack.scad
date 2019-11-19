@@ -4,6 +4,10 @@
 
  Mark Stenglein, 10.11.2018
 
+ For use with K&J Magnetics magnets part number B842-N52
+
+ Print the part with PLA or ABS.  Glue the magnet in place with superglue or epoxy.
+
 */
 
 
@@ -25,16 +29,16 @@ tube_hole_diameter = 11.5;
 
 
 
+// The part
 union()
 {
    base();
    inner();
-   // top();
-   //hole_measure();
    mag_face();
 }
 
 
+// circular base
 module base()
 {
   linear_extrude(height=base_height)
@@ -43,33 +47,7 @@ module base()
   } 
 }
 
-module inner_sq()
-{
-  translate([0, 0, base_height])
-  difference()
-  {
-        linear_extrude(height=inner_height)
-        { 
-           difference()
-           {
-              circle(d=inner_diameter);
-              circle(d=inner_diameter-inner_thickness);
-           }
-        }
-        for (angle =[45:90:315])
-        {
-           translate([0,0,base_height*1.1])
-           linear_extrude(height = (inner_height * 0.8))
-           {
-              rotate_about_pt(angle, [0,0,0])
-              translate([inner_diameter/2, 0, 0])
-              square(inner_diameter*0.55, center=true);
-           }
-           
-        }
-  }
-}
-
+// this is the middle of the part
 module inner()
 {
   translate([0, 0, base_height])
@@ -77,22 +55,13 @@ module inner()
   {
         linear_extrude(height=inner_height)
         { 
-           // difference()
-           // {
-              circle(d=inner_diameter);
-              // circle(d=inner_diameter-inner_thickness);
-           // }
+           circle(d=inner_diameter);
         }
         translate([0, 0, base_height+inner_height*0.4])
-        // %resize(newsize=[inner_diameter*2,inner_diameter*0.8,inner_height * 0.9]) sphere(r=(inner_diameter-inner_thickness)/2);
         resize(newsize=[inner_diameter*2,inner_diameter*0.65,inner_height * 0.9]) sphere(r=1,center=false);
 
         translate([0, 0, base_height+inner_height*0.4])
         resize(newsize=[inner_diameter*0.65,inner_diameter*2,inner_height * 0.9]) sphere(r=1,center=false);
-        // %sphere(r=(inner_diameter-inner_thickness)/2);
-
-        // translate([0, 0, base_height+inner_height*0.4])
-        // %resize(newsize=[inner_diameter*0.75,inner_diameter*0.75,inner_height * 0.9]) sphere(r=1,center=false);
 
         translate([0,-5,base_height])
         cube([7,7,7],center=true);
@@ -108,6 +77,7 @@ module inner()
   }
 }
 
+// circular top with tube hole
 module top()
 {
   translate([0, 0, base_height + inner_height - top_height/2])
@@ -116,11 +86,11 @@ module top()
      difference()
      {
         circle(d=inner_diameter);
-        %circle(d=tube_hole_diameter);
      }
   }
 }
 
+// a helper function for measuring the hole measuring 
 module hole_measure()
 {
   translate([0, 0, base_height+inner_height])
@@ -129,7 +99,7 @@ module hole_measure()
   }
 }
 
-
+// this makes the little bit that holds the magnet 
 module mag_face()
 {
    bx = 10;
