@@ -87,17 +87,21 @@ module make_flyght_house()
 
 module house()
 {
-   difference()
+   union()
    {
-     union()
-     {
-        linear_extrude(height=house_height)
-        square([house_width, house_length], center=true);
-        back_porch();
-     }
-     windows();
-     door();
-     interior_space();
+      difference()
+      {
+        union()
+        {
+           linear_extrude(height=house_height)
+           square([house_width, house_length], center=true);
+           back_porch();
+        }
+        windows();
+        door();
+        interior_space();
+      }
+      interior_posts();
    }
 }
 
@@ -112,6 +116,23 @@ module interior_space()
    translate([0,house_height*0.1,0])
    linear_extrude(height=house_height*0.8)
    square([house_width*0.9, house_length*0.8], center=true);
+}
+
+module interior_posts()
+{
+   // posts inside house to support roof
+
+   // for (width_fraction = [-0.8, -0.5, 0.5, 0.8])
+   for (width_fraction = [-0.65, 0.65])
+   {
+      for (length_fraction = [-0.2, 0.2])
+      {
+         translate([house_width * width_fraction / 2, house_length * length_fraction, house_height * 0.1])
+         linear_extrude(height=house_height*0.9, scale=0.3)
+         circle(r=post_radius*2.5, center=true);
+      }
+   }
+
 }
 
 module door()
