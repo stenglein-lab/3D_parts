@@ -47,6 +47,14 @@ This older version of the trap was designed by Shaun Cross to fit on 8 ounce jui
 
 
 
+### A flytehouse trap in action
+
+In a Colorado kitchen in the summer.
+
+![A flyte house fly trap attacting flies](./flyte_house_trap_in_action.jpg)
+
+
+
 
 *This project includes [code](./threads.scad) copyright 2017 Dan Kirshner, released under a GPL3.0 license.*
 
