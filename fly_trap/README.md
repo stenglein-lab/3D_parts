@@ -1,4 +1,4 @@
-## 3D-printed traps for collecting Drosophila melanogaster and related species
+## 3D-printed traps for collecting *Drosophila melanogaster* and related species
 
 This repository contains files used to create 3D-printed fruit fly traps.  These traps were designed by Shaun Cross, Mark Stenglein, and Lexi Keene-Snickers, and their use is described in [this paper](https://www.biorxiv.org/content/10.1101/2025.01.28.635319v1).  The 3D parts were designed in the [openscad scripting CAD language](https://openscad.org/).  Parts were mostly printed in PLA on a Lulzbot Taz 6 printer or a Prusa MK4 printer.  
 
@@ -48,7 +48,7 @@ This older version of the trap was designed by Shaun Cross to fit on 8 ounce jui
 
 
 
-*This project includes [code](./threads.scad) copyright 2017 Dan Kirshner - dan_kirshner@yahoo.com, released under a GPL3.0 license.*
+*This project includes [code](./threads.scad) copyright 2017 Dan Kirshner, released under a GPL3.0 license.*
 
 
 
