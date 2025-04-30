@@ -1,5 +1,5 @@
 /*
- This is the pizza-table like platform that gets inserted into flyght-house topped bottles.
+ This is the pizza-table like platform that gets inserted into flyte-house topped bottles.
 
  It is designed to keep the flies away from the food.
 
@@ -12,7 +12,7 @@ $fn = 50;
 // dimensions in mm
 
 // bottle_diameter = 50;
-bottle_diameter = 50.5;
+bottle_diameter = 50.25;
 thickness = 3.5;
 post_diameter = 5;
 post_height = 25;
@@ -20,9 +20,9 @@ post_height = 25;
 holddown_thickness=2;
 holddown_pin_radius=1.5;
 
-make_tabletop_only = 0;
+make_tabletop_only = 1;
 
-make_both = 1;
+make_both = 0;
 
 // make the tabletop
 module table_top() {
