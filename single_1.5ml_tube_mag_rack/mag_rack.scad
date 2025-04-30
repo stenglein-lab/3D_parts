@@ -57,19 +57,25 @@ module inner()
         { 
            circle(d=inner_diameter);
         }
+
+	// these next 2 make rotated egg-shaped holes in the part
+	// so you can see what's happening with your tube
         translate([0, 0, base_height+inner_height*0.4])
-        resize(newsize=[inner_diameter*2,inner_diameter*0.65,inner_height * 0.9]) sphere(r=1,center=false);
+        resize(newsize=[inner_diameter*1.8,inner_diameter*0.55,inner_height * 0.9]) sphere(r=1,center=false);
 
         translate([0, 0, base_height+inner_height*0.4])
-        resize(newsize=[inner_diameter*0.65,inner_diameter*2,inner_height * 0.9]) sphere(r=1,center=false);
+        resize(newsize=[inner_diameter*0.55,inner_diameter*1.8,inner_height * 0.9]) sphere(r=1,center=false);
 
+	// notch out a bit for the magnet to fit
         translate([0,-5,base_height])
         cube([7,7,7],center=true);
 
+	// make the tube hole in top
         translate([0,0,base_height+inner_height*0.7])
         linear_extrude(height=20)
         circle(d=tube_hole_diameter);
 
+	// make an indent in bottom for the bottom of the tube
         translate([0,0,-base_height*0.3])
         linear_extrude(height=10)
         circle(d=6);
