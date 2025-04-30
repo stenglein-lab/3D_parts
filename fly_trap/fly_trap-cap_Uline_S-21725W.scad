@@ -1,5 +1,32 @@
-//Fruit fly bottle cap
-// This bottle cap fits on the plastic bottles that Mark ordered for our citizen science project
+// Fruit fly bottle cap trap 
+// This bottle cap fits on 8 ounce juice bottles, uline catalog # S-21725W
+
+// This was originally designed by Shaun Cross, 2019
+
+/* This file includes code from the thread library,
+ * Copyright 2017 Dan Kirshner - dan_kirshner@yahoo.com,
+ * which is licensed under the GNU GPL v3.0.
+ * This library is available from::
+ * http://dkprojects.net/openscad-threads/
+*/
+
+/*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * See <http://www.gnu.org/licenses/>.
+*/
+
+
+
+// size parameters, in mm
 cap_radius = 38.1/2; //as pulled from the website https://www.uline.com/Product/Detail/S-21725/Bottles/Plastic-Juice-Bottles-8-oz
 fly_exit_height = 40; //how long the fly exit is
 fly_exit = 10; //starting radius of the linear extrude
@@ -9,10 +36,7 @@ fly_hole_scale = 0.15; //the size of the hole that gets removed from the fly exi
 cap_height = 10;
 
 weird_cap_height = 10;
-// color("green") 
 
-//translate([50,0,0])
-//make_cap();
     union(){
         union(){
             difference(){

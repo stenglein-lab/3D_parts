@@ -1,14 +1,37 @@
-//Fruit fly bottle cap
-// This bottle cap fits on the plastic bottles that Mark ordered for our citizen science project
-// https://catalog.uline.com/Spring-Summer-US-2019/567/
-// U-Line catalog # S-9934
+// Fruit fly trap 
+// This bottle cap fits on plastic bottles corresponding to U-Line catalog # S-9934
+// https://www.uline.com/Product/Detail/S-9934
 
+// This is based on a design from Shaun Cross, modified by Mark Stenglein
+
+/* This file includes code from the thread library,
+ * Copyright 2017 Dan Kirshner - dan_kirshner@yahoo.com,
+ * which is licensed under the GNU GPL v3.0.
+ * This library is available from::
+ * http://dkprojects.net/openscad-threads/
+*/
+
+/*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * See <http://www.gnu.org/licenses/>.
+*/
+
+// size parameters
 cap_radius = 63/2;      //according to U-line spec 
 
 fly_exit_height = 25;   //how long the fly exit is
 fly_exit = 15;          //starting radius of the linear extrude
-fly_exit_scale = 0.133;   //the scaling value (ending exit size from linear extrude)
-fly_hole_scale = 0.1;  //the size of the hole that gets removed from the fly exit
+fly_exit_scale = 0.133; //the scaling value (ending exit size from linear extrude)
+fly_hole_scale = 0.1;   //the size of the hole that gets removed from the fly exit
 
 // threads on cap (mm)
 thread_pitch  = 4.23;
@@ -25,13 +48,6 @@ $fn=50;
 // Dan Kirshner's thread library from:
 // http://dkprojects.net/openscad-threads/
 include <threads.scad>;
-include <threads-library-by-cuiso-v1.scad>;
-
-// color("green") 
-
-//translate([50,0,0])
-//make_cap();
-
 
 module make_all()
 {
@@ -54,21 +70,6 @@ module make_all()
 }
 
 make_all();
-// make_weird_top();
-// make_threads();
-// make_cap();
-
-
-module make_ring_of(radius, count)
-{
-    for (a = [0 : count - 1]) {
-        angle = a * 360 / count;
-        translate(radius * [sin(angle), -cos(angle), 0])
-            rotate([0, 0, angle])
-                children();
-    }
-}
-
 
 module make_weird_top_channels()
 {
@@ -77,31 +78,17 @@ module make_weird_top_channels()
             linear_extrude(height=weird_cap_height)
             circle(cap_radius);
 
-
             for (angle =[0:18:360 ])
             {
-               // rotate_about_pt([angle,0,0])
                linear_extrude(height=weird_cap_height)
                rotate([0,0,angle])
                sector(cap_radius*1.05, [-5,5], 50);
             }
 
-            // make_ring_of(radius = cap_radius, count = 20)
-
-               // sector(cap_radius, [-9, 9], 50);
-               // sector(radius, angles, fn);
-
             linear_extrude(height=weird_cap_height)
             circle(fly_exit*1.2);
 
             };
-
-            // make_ring_of(radius = cap_radius, count = 20)
-                // rotate([90, 0, 0])
-                // translate([0,0,10])
-                // linear_extrude(height = cap_radius*1.5, center = true)
-                // %square([5,10], center = false);
-            // };
 
             linear_extrude(height = 2)
             circle(cap_radius);
@@ -144,9 +131,6 @@ module make_cap()
 
 module make_threads()
 {
-   // translate([0,0,thread_length*1.2])
-   // %circle(54/2);
-
    difference(){
       linear_extrude(height=thread_length)
       circle(cap_radius);

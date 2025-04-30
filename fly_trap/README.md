@@ -33,7 +33,7 @@ A trap designed to look like the US White House.  Also fits on uline S-9934.
 
 We bait these traps with banana and yeast or other kinds of bait.  This bait can liquify and get sticky and the flies can get stuck in the sticky goo.  We insert this platform into the jars to keep flies away from the bait.  We print the platform then hot glue on a piece of [organdy](https://en.wikipedia.org/wiki/Organdy) fabric.  We call this part the [pizza table](https://en.wikipedia.org/wiki/Pizza_saver).
 
-[SCAD file](./pizza_table.scad]
+[SCAD file](./pizza_table.scad)
 
 ![A platform to keep flies away from the sticky trap bait](./pizza_table.png)
 

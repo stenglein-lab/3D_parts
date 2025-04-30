@@ -7,6 +7,28 @@
  Updated: Mark Stenglein, 2024
  */
 
+/* This file includes code from the thread library,
+ * Copyright 2017 Dan Kirshner - dan_kirshner@yahoo.com,
+ * which is licensed under the GNU GPL v3.0.
+ * This library is available from::
+ * http://dkprojects.net/openscad-threads/
+*/
+
+/*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * See <http://www.gnu.org/licenses/>.
+*/
+
+
 $fn = 50;
 
 // dimensions in mm
