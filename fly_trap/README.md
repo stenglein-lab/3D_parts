@@ -39,13 +39,16 @@ We bait these traps with banana and yeast or other kinds of bait.  This bait can
 
 #### A juice bottle version
 
-This older version of the trap was designed to fit on 8 ounce juice bottles: uline catalog # [S-21725W](https://www.uline.com/Product/Detail/S-21725W). 
+This older version of the trap was designed by Shaun Cross to fit on 8 ounce juice bottles: uline catalog # [S-21725W](https://www.uline.com/Product/Detail/S-21725W). 
 
 [SCAD file](./fly_trap-cap_Uline_S-21725W.scad)
 
 ![a 3D-printed fly trap juice bottle lid](./fly_trap-cap_Uline_S-21725W.png)
 
 
+
+
+*This project includes [code](./threads.scad) copyright 2017 Dan Kirshner - dan_kirshner@yahoo.com, released under a GPL3.0 license.*
 
 
 
