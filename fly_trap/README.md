@@ -46,6 +46,12 @@ This older version of the trap was designed by Shaun Cross to fit on 8 ounce jui
 ![a 3D-printed fly trap juice bottle lid](./fly_trap-cap_Uline_S-21725W.png)
 
 
+#### A mason jar version
+
+This version fits onto standard US canning jars (mason jars).  
+
+[SCAD file](./fly_trap_standard_US_canning_jar_70mm.scad)
+
 
 ### A flytehouse trap in action
 
